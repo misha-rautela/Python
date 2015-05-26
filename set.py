@@ -1,0 +1,12 @@
+set_alpha =['a','b','c']
+alpha_t= set(set_alpha)
+print(alpha_t)
+print('a' in set_alpha)
+a=set('aabbccddee')
+b=set('mishamishamisha')
+print(a)
+print(b)
+print(a-b)
+print(a|b)
+print(a&b)
+print(a^b)
