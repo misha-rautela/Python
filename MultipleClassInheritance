@@ -1,0 +1,39 @@
+#Multiple Inheritance deriving child from two parent Classes
+class Parent1:
+    def __init__(self,p1_param1,p1_param2,p1_param3):
+        self.p1_param1=p1_param1
+        self.p1_param2=p1_param2
+        self.p1_param3=p1_param3
+    
+    def Parent1_func(self):
+        print(f" Here are the parameters of the parent class  {self.p1_param1} {self.p1_param2} {self.p1_param3}")
+        
+class Parent2():
+    def __init__(self,p2_param1):
+        self.p2_param1=p2_param1
+    
+    def Parent2_func(self):
+        print(f" Here are the parameters of the child class {self.p2_param1}")
+
+#Inherited Class
+class child(Parent1,Parent2):
+    def __init__(self,p1_param1,p1_param2,p1_param3,p2_param1,c_param1):
+        Parent1.__init__(self,p1_param1,p1_param2,p1_param3)
+        Parent2.__init__(self,p2_param1)
+        self.c_param1=c_param1
+    
+    def child_func1(self):
+        print(f"this is the child func1 {self.c_param1}")
+    print("parent1")
+parentobj1=Parent1('a','b','c')
+parentobj1.Parent1_func()
+
+print("parent2")
+parentobj2=Parent2('d')
+parentobj2.Parent2_func()
+
+print("child")
+childobj=child('a','b','c','d','e')
+childobj.Parent1_func()
+childobj.Parent2_func()
+childobj.child_func1()
